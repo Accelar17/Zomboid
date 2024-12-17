@@ -28,7 +28,6 @@ class CSVFileReader(FileReader):
             with open(self.file_path, mode='r', encoding='utf-8') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    # Нормалізація ключів до нижнього регістру та обробка значень
                     normalized_row = {
                         key.lower(): self._convert_value(value) for key, value in row.items()
                     }
